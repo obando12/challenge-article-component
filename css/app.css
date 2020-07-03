@@ -43,7 +43,7 @@ img {
       grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .article {
     margin: 0;
     width: 730px;
@@ -60,7 +60,7 @@ img {
      object-fit: cover;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .article__img {
     height: 100%;
     border-radius: 10px 0px 0px 10px;
@@ -78,7 +78,7 @@ img {
   margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .article__title {
     font-size: 14px;
   }
@@ -90,7 +90,7 @@ img {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .article__text {
     font-size: 13px;
   }
@@ -110,6 +110,7 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .user__content {
@@ -144,5 +145,85 @@ img {
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.user__share:hover {
+  background-color: #9eafc2;
+}
+
+/*  =============
+    share block
+    =============  */
+.share {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #ecf2f8;
+  background-color: #48556a;
+  position: absolute;
+  width: 330px;
+  border-radius: 0px 0px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: -20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  left: -30px;
+  opacity: 0;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+@media (min-width: 1024px) {
+  .share {
+    border-radius: 10px;
+    width: 250px;
+    height: 55px;
+    left: auto;
+    bottom: 70px;
+    right: -110px;
+  }
+  .share::before {
+    content: "";
+    -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: -10px;
+    right: 113px;
+    background-color: #48556a;
+  }
+}
+
+.share__text {
+  padding: 0px 10px 0px 30px;
+}
+
+.share__icon {
+  padding: 0 10px;
+}
+
+/* hover state */
+.user__share:hover ~ .share,
+.share:hover {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 /*# sourceMappingURL=app.css.map */

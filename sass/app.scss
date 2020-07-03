@@ -6,7 +6,7 @@ $medium: 500;
 $bold: 700;
 
 /* responsive */
-$tablet: 768px;
+$tablet: 1024px;
 
 @mixin tablet {
   @media (min-width: #{$tablet}) {
@@ -103,6 +103,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   &__content {
     height: 100%;
@@ -134,5 +135,74 @@ img {
     border-radius: 50%;
     width: 32px;
     height: 32px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+      background-color: $GrayishBlue;
+    }
   }
+}
+
+/*  =============
+    share block
+    =============  */
+
+.share {
+  text-transform: uppercase;
+  font-weight: $medium;
+  letter-spacing: 4px;
+  color: $LightGrayishBlue;
+  background-color: $VeryDarkGrayishBlue;
+  position: absolute;
+  width: 330px;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  bottom: -20px;
+  justify-content: flex-start;
+  height: 80px;
+  align-items: center;
+  visibility: hidden;
+  left: -30px;
+  opacity: 0;
+  transition: 0.25s all ease;
+  transition-delay: 0.25s;
+
+  @include tablet() {
+    border-radius: 10px;
+    width: 250px;
+    height: 55px;
+    left: auto;
+    bottom: 70px;
+    right: -110px;
+
+    &::before {
+      content: "";
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      bottom: -10px;
+      right: 113px;
+      background-color: $VeryDarkGrayishBlue;
+    }
+  }
+
+  &__text {
+    padding: 0px 10px 0px 30px;
+  }
+
+  &__icon {
+    padding: 0 10px;
+  }
+}
+
+/* hover state */
+.user__share:hover ~ .share,
+.share:hover {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.25s all ease;
+  transition-delay: 0s;
 }
