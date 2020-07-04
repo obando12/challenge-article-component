@@ -1,3 +1,7 @@
+/*  =============
+    base
+    =============  */
+/* colors */
 /* responsive */
 /*  =============
     global styles
@@ -10,8 +14,11 @@
   font-family: "Manrope", sans-serif;
 }
 
-body {
+html {
   font-size: 13px;
+}
+
+body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,26 +81,21 @@ img {
 
 .article__title {
   color: #48556a;
-  font-size: 11px;
+  font-size: 1.3rem;
   margin-bottom: 20px;
 }
 
 @media (min-width: 1024px) {
   .article__title {
-    font-size: 14px;
+    font-size: 1.6rem;
   }
 }
 
 .article__text {
+  font-weight: 500;
   margin-bottom: 30px;
   color: #6d7f97;
-  font-size: 14px;
-}
-
-@media (min-width: 1024px) {
-  .article__text {
-    font-size: 13px;
-  }
+  font-size: 1.1rem;
 }
 
 /*  =============
@@ -128,12 +130,12 @@ img {
 
 .user__nombre {
   color: #48556a;
-  font-size: 14px;
+  font-size: 1.1rem;
 }
 
 .user__fecha {
   color: #6d7f97;
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 

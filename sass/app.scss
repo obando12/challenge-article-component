@@ -1,3 +1,8 @@
+/*  =============
+    base
+    =============  */
+/* colors */
+
 $VeryDarkGrayishBlue: hsl(217, 19%, 35%);
 $DesaturatedDarkBlue: hsl(214, 17%, 51%);
 $GrayishBlue: hsl(212, 23%, 69%);
@@ -25,8 +30,11 @@ $tablet: 1024px;
   font-family: "Manrope", sans-serif;
 }
 
-body {
+html {
   font-size: 13px;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,22 +83,19 @@ img {
 
   &__title {
     color: $VeryDarkGrayishBlue;
-    font-size: 11px;
+    font-size: 1.3rem;
     margin-bottom: 20px;
 
     @include tablet() {
-      font-size: 14px;
+      font-size: 1.6rem;
     }
   }
 
   &__text {
+    font-weight: $medium;
     margin-bottom: 30px;
     color: $DesaturatedDarkBlue;
-    font-size: 14px;
-
-    @include tablet() {
-      font-size: 13px;
-    }
+    font-size: 1.1rem;
   }
 }
 
@@ -118,12 +123,12 @@ img {
 
   &__nombre {
     color: $VeryDarkGrayishBlue;
-    font-size: 14px;
+    font-size: 1.1rem;
   }
 
   &__fecha {
     color: $DesaturatedDarkBlue;
-    font-size: 14px;
+    font-size: 1.1rem;
     font-weight: $medium;
   }
 
